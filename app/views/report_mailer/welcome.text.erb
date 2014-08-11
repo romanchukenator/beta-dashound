@@ -1,8 +1,8 @@
-Thank God you signed up for Dashound, <%= @user.email %>
+Thank God you signed up for Dashound, <%= current_user.email %>
 ===============================================
  
-Your username is: <%= @user.email %>
-Your password is: <%= @user.password %>
+Your username is: <%= current_user.email %>
+Your password is: <%= current_user.password %>
  
 Login to Dashound at: <%= @url %>.
  

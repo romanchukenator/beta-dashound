@@ -1,0 +1,80 @@
+<section id="hero">
+  <div class="hero-translucent">
+    <div id="hero-text">    
+      <h1>Welcome to the Dashound Beta</h1>
+      <h3>We're here to help</h3>
+
+      <div class="mc-field-group">
+        <div class="form-group">
+          <%= form_for(:session, url: sessions_path) do |f| %>
+            <div class="input-group">
+              <div class="input-group-addon">
+                <i class="fa fa-envelope fa-lg fa-fw envelope"></i>
+              </div>
+              <%= f.text_field :email, class: "form-control", id: "mce-EMAIL", placeholder: "email address" %>
+            </div>
+
+            <div class="input-group">
+              <div class="input-group-addon">
+                <i class="fa fa-lock fa-lg fa-fw envelope"></i>
+              </div>
+              <%= f.password_field :password, class: "form-control", id: "mce-EMAIL", placeholder: "password" %>
+            </div>
+      
+            <%= f.submit "Sign in", class: "btn btn-large btn-primary" %>
+          <% end %>
+        </div>
+      </div>
+
+      <p>New user? <a href="#" data-toggle="modal" data-target="#myModal">Sign up now!</a></p>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title" id="myModalLabel">Sign Up</h4>
+      </div>
+      <div class="modal-body">
+
+      <div class="mc-field-group text-center">
+        <div class="form-group">
+          <%= form_for :user, url: users_path do |f| %>
+
+            <div class="input-group">
+                <div class="input-group-addon">
+                  <i class="fa fa-envelope fa-lg fa-fw envelope"></i>
+                </div>
+                <%= f.text_field :email, class: "form-control", id: "mce-EMAIL", placeholder: "email address" %>
+              </div>
+
+            <div class="input-group">
+              <div class="input-group-addon">
+                <i class="fa fa-lock fa-lg fa-fw envelope"></i>
+              </div>
+              <%= f.password_field :password, class: "form-control", id: "mce-EMAIL", placeholder: "password" %>
+            </div>
+
+            <div class="input-group">
+              <div class="input-group-addon">
+                <i class="fa fa-lock fa-lg fa-fw envelope"></i>
+              </div>
+              <%= f.password_field :password_confirmation, class: "form-control", id: "mce-EMAIL", placeholder: "password confirmation" %>
+            </div>
+
+            <%= f.submit "Take me to the Dashound Beta", class: "btn btn-large btn-primary" %>
+          <% end %>
+        </div>
+      </div>
+      
+      </div>
+
+    </div>
+  </div>
+</div>

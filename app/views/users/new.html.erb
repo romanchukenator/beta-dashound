@@ -1,0 +1,39 @@
+<% provide(:title, "Sign up") %>
+<section id="hero" style="background-image: none;">
+  <div class="hero-translucent">
+    <div id="hero-text">    
+      <h1>Dashound Beta sign up</h1>
+      <h3>There were some problems with your registration</h3>
+      
+      <%= render 'shared/error_messages' %>
+
+      <div class="mc-field-group text-center">
+        <div class="form-group">
+          <%= form_for :user, url: users_path do |f| %>
+
+            <div class="input-group">
+                <div class="input-group-addon">
+                  <i class="fa fa-envelope fa-lg fa-fw envelope"></i>
+                </div>
+                <%= f.text_field :email, class: "form-control", id: "mce-EMAIL", placeholder: "email address" %>
+              </div>
+
+            <div class="input-group">
+              <div class="input-group-addon">
+                <i class="fa fa-lock fa-lg fa-fw envelope"></i>
+              </div>
+              <%= f.password_field :password, class: "form-control", id: "mce-EMAIL", placeholder: "password" %>
+            </div>
+
+            <div class="input-group">
+              <div class="input-group-addon">
+                <i class="fa fa-lock fa-lg fa-fw envelope"></i>
+              </div>
+              <%= f.password_field :password_confirmation, class: "form-control", id: "mce-EMAIL", placeholder: "password confirmation" %>
+            </div>
+
+            <%= f.submit "Take me to the Dashound Beta", class: "btn btn-large btn-primary" %>
+          <% end %>
+        </div>
+      </div>
+</section>

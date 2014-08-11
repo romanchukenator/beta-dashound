@@ -1,0 +1,834 @@
+// Colour Variables
+$colour1: rgb(0,0,0); // text black
+$colour2: rgb(236,240,241); // light grey
+$colour3: rgb(231,75,60); // fuschia
+$colour4: rgb(52,152,219); // cerulean blue
+$colour5: rgb(21,202,177); // aqua
+$colour6: rgb(230,115,81); //orange
+$colour7: rgb(46,204,113); // Emerald Green
+$colour8: rgb(251,184,41); // yellow
+$light-grey: #f8f8f8;
+$hl-green: rgb(90, 189, 90);
+$hl-red: #A51212;
+
+// Other Variables
+$nav-height: 50px;
+$font-1: 'Yellowtail';
+$font-2: 'Open Sans';
+
+// Body
+
+body{
+  padding-top: $nav-height;
+}
+
+li{
+  text-align: center;
+}
+// Overall Media Hacks
+
+section{
+  @media screen and (max-width: 768px){
+    text-align: center;
+
+    .row.container{
+      padding-right: 0px;
+      margin-right: 0px;
+    }
+  }
+}
+
+section.feature{
+  @media screen and (max-width: 768px){
+    h1{
+      margin-top: 20px;
+    }
+  }
+}
+
+// Navbar
+.navbar{
+  height: $nav-height;
+  margin-bottom: 0;
+  background: $colour4;
+  border-radius: 0;
+  border: 0;
+  border-bottom: 0px solid darken($colour4, 10%);
+  a{
+    color: #fff !important;
+  }
+
+  #sign-up-link{
+    background-color: lighten($colour7, 10%);
+  }
+
+  .navbar-brand{
+    font-family: $font-1;
+    font-size: 40px;
+    //display: none;
+  }
+
+  .navbar-link{
+    font-family: $font-2;
+    font-weight: 400;
+    //text-transform: uppercase;
+    font-size: 14px;
+    padding: 10px 25px 5px 25px !important;
+  }
+
+  .signup-btn{
+    font-family: $font-2;
+    font-weight: 400;
+    text-transform: uppercase;
+    font-size: 14px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 0px;
+    margin-left: 25px;
+  }
+
+  .navbar-toggle{
+    border-color: #fff;
+    &:hover{
+      background-color: lighten($colour8, 20%);
+    }
+    .icon-bar{
+      background-color: #fff;
+    }
+  }
+
+  .btn-navbar{
+    margin-top: 7px;
+    margin-bottom: 8px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+  }
+
+  li{
+    width: 110px;
+  }
+
+  @media screen and (max-width: 768px){
+    
+    li a{
+      background-color: #AECCBD;
+      &:hover{
+        background-color: lighten(#AECCBD,10%) !important;
+      }
+    }
+
+    .btn-navbar{
+      margin-top: 0px;
+      margin-bottom: 0px;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      border-radius: 0;
+    }
+
+    .nav{
+      margin-top: 0px;
+      margin-bottom: 0px;
+    }
+
+    .navbar-collapse{
+      border: 0;
+      text-align: center;
+    }
+  }
+}
+
+.navbar.transition{
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+
+  background-color: $colour4;
+  border-bottom: 3px solid darken($colour4, 10%) !important;
+  .navbar-brand{
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;   
+    display: block;
+  }
+}
+
+// Homepage Hero
+
+#hero{
+  margin-top: -$nav-height;
+  background-color: $colour4;
+  position: fixed;
+  min-height: 100%;
+  min-width: 100%;
+  background-image: image-url('bench.png');
+  background-repeat: no-repeat;
+  background-size: 50%;
+  background-position: center bottom;
+
+  .hero-translucent{
+    background-color: rgba(87,99,92,0.0);
+    height: 100%;
+    width: 100%;
+    text-align: center;
+
+    .logo{
+      font-size: 40px;
+      text-shadow: 0px 2px 4px #000000;
+      font-family: $font-1;
+
+      @media screen and (max-width: 320px){
+      font-size: 50px;
+  }
+    }
+
+    h1{
+      font-size: 42px;
+      color: #fff;
+      //margin-bottom: 25px;
+      margin-top: 45px;
+      //text-shadow: 0px 2px 4px black; 
+      font-family: $font-2;
+      font-weight: 300; 
+      @media screen and (max-width: 360px){
+      font-size: 20px;
+  } 
+    }
+
+    &:before{
+      content: '';
+      display: inline-block;
+      height: 100%;
+      vertical-align: middle;
+      margin-right: -0.25em;
+    }
+
+    #hero-text{
+      display: inline-block;
+      width: 99%;
+      padding: 75px 135px 0px 135px;
+      @media screen and (max-width: 360px){
+        padding: 75px 0px 0px 0px;
+      }
+
+    #hero-image{
+      display:block;
+      img{
+        width: 600px;
+      }
+    }
+    }
+    h3{
+      font-size: 32px;
+      //text-shadow: 0px 2px 4px #000000;
+      font-family: $font-2;
+      font-weight: 300; 
+      color: lighten($colour4, 20%);
+      padding-bottom: 15px;
+      @media screen and (max-width: 360px){
+        font-size: 16px;
+      }
+    }
+    .screencap{
+      //background-image: image-url('dashboard.png');
+      background-size: auto;
+      background-repeat: no-repeat;
+    }
+  }
+}
+
+// Buttons
+
+.btn{
+  border: 0;
+  padding: 10px 15px;
+  box-shadow: inset 0 -4px 0 darken($colour7,20%);
+  display:inline-block;
+  font-size: 18px;
+}
+
+.btn-large{
+  font-size: 18px;
+  padding: 45px;
+  font-family: $font-2;
+  font-weight: 700;
+  margin-top: 7px;
+  margin-bottom: 8px;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  @media screen and (max-width: 360px){
+    font-size: 14px;
+    align: center;
+  }
+}
+.btn-navbar{
+  &:hover{
+    border-bottom: 3px solid #fff !important;
+  }
+}
+.btn-primary{
+  background-color: lighten($colour7, 0%) !important;
+  border: 0 solid darken($colour7, 15%) !important;
+  border-radius: 0px !important;
+  font-family: $font-2;
+  font-weight: 400; 
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  vertical-align: center;
+  &:hover{
+    background: darken($colour7, 5%) !important;
+  }
+}
+
+.btn-icon-area{
+  padding: 9px;
+  background-color: lighten($colour6, 5%);
+  border-radius: 5px;
+  box-shadow: inset 0 -4px 0 darken(lighten($colour6,5%),5%);
+  &:hover{
+    background: darken(lighten($colour6,5%),5%);
+  }
+}
+
+//How BenchMarker Gets It Done
+
+#gets-done{
+  margin: auto;
+  padding-bottom: 20px;
+  color: #555;
+  border-bottom: LightGray;
+  border-style: solid; 
+  border-width: 1px;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  margin: auto;
+
+  .tagline{
+    margin-top: 200px;
+    margin-bottom: 50px;
+    padding-bottom: 0px;
+  }
+
+
+  h5{
+    text-align: left;
+    font-size: 15px;
+    margin-bottom: 10px;
+  }
+
+  .get-writeup{
+    padding: 0px 0px 0px 0px;
+    font-family: $font-2;
+    font-size: 14px;
+    margin-bottom: 100px;
+  }
+}
+
+.get-spacing{
+  padding-bottom: 50px;
+}
+
+
+h2{
+  font-weight: 300;
+  margin-top: 0px;
+  margin-bottom: 50px;
+}
+
+
+//Three Marketing Points
+#three-market{
+  margin: auto;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  color: #555;
+  border-bottom: LightGray;
+  border-style: solid; 
+  border-width: 1px;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  margin: auto
+}
+
+  .market-image{
+    width: 100%;
+    margin: auto;
+    padding-bottom: 15px;
+
+    img{
+      height:150px;
+      display: block;
+      margin: auto;
+    }
+  }
+
+  .market-title{
+    font-family: $font-2;
+    text-align: center;
+    font-weight: 600;
+    font-size: 18px;
+    padding-top: 15px;
+    //background: $colour2;
+    //height: 40px;
+    margin-bottom: 15px;
+  }
+
+  .market-paragraph{
+    padding: 15px 15px 15px 15px;
+    font-family: $font-2;
+    font-weight: 400;
+    font-size: 15px;
+    background-color: $colour2;
+    height: 170px;
+    text-align: left;
+  }
+
+
+// Features
+
+.feature{
+  padding-top: 20px;
+  padding-bottom: 50px;
+  color: #555;
+  border-bottom: LightGray;
+  border-style: solid; 
+  border-width: 1px;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+
+
+  h1{
+    margin-top: 0px;
+    margin-bottom: 15px;
+    color: $colour1;
+    font-family: $font-2;
+    font-weight: 300;
+  }
+
+  .feature-name{
+    padding: 0px 25px 0px 25px;
+    @media screen and (max-width: 360px){
+      padding: 0px 0px 0px 0px;
+    }
+
+    h5{
+      text-transform: uppercase;
+      //color: $colour1;
+      font-size: 14px;
+      text-align: center;
+      font-family: $font-2;
+      margin: 15px;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+    h3{
+      //color: $colour7;
+      text-align: center;
+      padding-top: 0px;
+      font-family: $font-2;
+      font-size: 24px;
+      margin: 15px;
+      font-weight: 300;
+      @media screen and (max-width: 360px){
+        font-size: 16px;
+        margin: 0px 0px 0px 0px;
+      }
+    }
+    p{
+      color: #555;
+      font-size: 16px;
+      text-align: center;
+      margin: 15px 0px 50px 0px;
+      padding: 0px 60px 0px 60px;
+      font-family: $font-2;
+      font-weight: 300;
+      @media screen and (max-width: 360px){
+        padding: 0px 0px 0px 0px;
+        font-size: 12px;
+        margin: 15px 0px 15px 0px;
+      }
+    }
+  }
+
+  .feature-screen{
+    align: center;
+    img{
+      width: 70%;
+      display: block;
+      margin: auto;
+      padding: 50px 0px 70px 0px;
+
+      }
+
+    }
+  }
+
+#feature-start, #feature-third{
+  background-color: #fff;
+}
+
+#feature-start{
+  padding-bottom: 0px;
+  @media screen and (min-width: 768px) and (max-width: 800px){
+    .container{
+      width: 100%;
+    }
+  }
+}
+
+// Sign Up Home Section
+
+#sign-up{
+  color: #fff;
+  background-color: $colour4;
+  text-align: center;
+  font-family: $font-2;
+  font-weight: 300;
+  height: 400px;
+
+  h1{
+    font-family: $font-2;
+    font-weight: 300;
+    //text-transform: uppercase;
+    font-size: 36px;
+    margin: 0px 0px 50px 0px;
+
+  }
+}
+
+// Vertical Centering
+
+.v-ctr{
+  height: 100%;
+
+  &:before{
+    content: '';
+    //display: block;
+    height: 100%;
+    vertical-align: middle;
+    margin-right: -0.25em;
+  }
+
+  .v-ctr-txt{
+    display: block;
+    vertical-align: middle;
+  }
+}
+
+// Footer
+
+footer{
+  background-color: $colour1;
+  color: lighten($colour1, 25%);
+  padding: 10px 0px;
+  display: block;
+  bottom: 0;
+  //height: 50px;
+  padding: auto;
+  margin: auto;
+
+}
+
+// Easy Sign Up
+
+#fake-form{
+  input:disabled{
+    background-color: #fff;
+    cursor: inherit;
+  }
+
+  .form-group:last-of-type{
+    margin-bottom: 0px;
+  }
+}
+
+#mc_embed_signup{
+  //display: block;
+  margin: 20px 0px 0px 0px;
+}
+
+input{
+  font-family: $font-2;
+  border-radius: 0px;
+  background-color: white;
+  color: black;
+}
+
+.input-group{
+  margin-bottom: 10px !important;
+  margin: auto;
+  width: 302px;
+  border: 0px;
+  border-radius: 0px;
+}
+
+.input-group-addon{
+  background-color: $colour7 !important;
+  border:0px !important;
+  border-radius: 0px !important;
+}
+
+.envelope{
+  color: #fff;
+}
+
+#fake-form-check{
+  text-align: center;
+  font-size: 110px;
+  color: darken($colour7,15%);
+}
+
+#fake-form-container{
+  padding-top: 23px;
+  padding-bottom: 15px;
+
+  @media screen and (max-width: 768px)
+  {
+    margin-left: 15px;
+    margin-right: 15px;
+    padding-bottom: 0px;
+  }
+}
+
+// Sign Up Page
+
+#sign-up-hero{
+  height: 100%;
+  background-color: white;
+
+  h2{
+    margin-top: 0;
+  }
+  h1{
+    font-family: $font-2;
+    font-size: 32px;
+    font-weight: 700;
+    text-align: center;
+    margin-top: 30px;
+  }
+  p{
+    font-family: $font-2;
+    font-weight: 300;
+    padding: 0px 150px 0px 150px;
+    font-size: 16px;
+    @media screen and (max-width: 360px){
+      padding: 0px 10px 0px 10px;
+    }
+  }
+
+  .panel{
+    margin-top: 50px;
+    padding: 15px;
+    background-color: 'white';
+    border: 3px solid darken($colour7, 15%) !important;
+    border-radius: 20px !important;
+  }
+}
+
+.form-group{
+    font-family:$font-2;
+    font-weight: 400 !important;
+    display: block;
+    border-radius: 25px !important; 
+    //margin: 20px;
+  }
+
+.form-control{
+    font-family:$font-2;
+    font-weight: 400 !important;
+    display: inline-block;
+    border: 0px;
+    border-radius: 0px;
+}
+
+label{
+    font-family:$font-2;
+    font-weight: 600 !important;
+  }
+
+#sign-up-title{
+  text-align: center;
+  color: $colour7;
+  margin-bottom: 30px;
+  font-family: $font-2;
+}
+
+#beta-test-copy{
+  h1{
+    color: $colour4;
+    margin-bottom: 30px;
+    font-family: $font-2;
+    font-weight: 400;
+  }
+  p{
+    font-family: $font-2;
+    font-weight: 400;
+    font-size: 16px;
+  }
+}
+
+#sign-up-tagline{
+  font-family: $font-2;
+}
+
+//Pricing Page
+#pricing-start{
+  h2{
+    margin:0 0 0 0;
+    font-size: 18px;
+    font-family: $font-2;
+    font-weight: 400;
+  }
+
+}
+.tagline{
+  font-family: $font-2;
+  font-size: 24px;
+  font-weight: 300;
+  margin: auto;
+  text-align: center;
+  padding: 0px 0px 60px 0px;
+  h1{
+    font-weight: 300;
+    font-size: 42px;
+     margin-top: 50px;
+  }
+  h3{
+    font-weight: 300;
+    margin-bottom: 50px;
+  }
+}
+.pricing-header{
+  border-radius: 0px;
+  border: none;
+  text-align: center;
+  color: $colour4;
+  //text-transform: uppercase;
+  font-family: $font-2;
+  font-weight: 300;
+  background-color: $colour2;
+  border-bottom-right-radius:0;
+  border-bottom-left-radius:0;
+  padding: 5px 0px 5px 0px;
+  .panel-heading{
+    border-radius: 0;
+    border: none;
+    color: #fff;
+    font-family: $font-2;
+    font-weight: 400;
+  }
+
+}
+
+.recmd{
+  background-color: $colour4 !important;
+  color: #fff !important;
+  border: 0px solid $colour4 !important;
+}
+
+.header{
+  font-family: $font-2;
+  font-weight:400;
+  font-size: 12px;
+  text-align: center;
+  text-transform: uppercase;
+  color: #fff;
+  background-color: darken($colour4, 25%);
+  margin-top: -10px;
+}
+
+.plan-name{
+  text-align: center;
+  font-family: $font-2;
+  background-color: $colour2;
+  color: $colour4;
+  padding: 5px 0px 0px 0px;
+}
+
+.frequency{
+  //background-color: darken($colour7, 20%);
+  font-family: $font-2;
+  font-size: 20px;
+  align: center;
+  text-align: center;
+  color: $colour4;
+  padding: 5px 0px 5px 0px;
+}
+
+.price{
+  font-family: $font-2;
+  font-weight: 300;
+  font-size: 45px;
+}
+
+.term{
+  font-family: $font-2;
+  font-weight: 400;
+  font-size: 20px;
+}
+
+.pricing-body{
+  padding: 10px 10px 0px 10px;
+  //margin-bottom: 50px;
+  border: 3px solid $colour2;
+  border-bottom-right-radius:3px;
+  border-bottom-left-radius:3px;
+  color: black;
+  //text-align: center;
+  font-size: 14px;
+  //height: 70px;
+  font-family: $font-2;
+  margin-bottom: 100px;
+}
+
+.recmd-border{
+  border-color: $colour4;
+}
+
+ul{
+  padding-left: 0px;
+}
+
+.list-group-item{
+  border-top: 1px black dotted;
+  border-left: 0px;
+  border-right: 0px;
+  border-bottom: 1px black dotted;
+  border-radius: 0px !important;
+  font-family: $font-2;
+  font-weight: 300;
+  font-size: 14px;
+  text-align: left;
+}
+
+.badge{
+  background-color: #fff;
+  //font-family: $font-2;
+  color: #000;
+  font-size: 14px;
+}
+
+.green{
+  color: $colour7;
+}
+
+.red{
+  color: $colour3;
+}
+
+
+// *{
+//  background:#000 !important;
+//  color: #0f0 !important;
+//  outline: solid #f00 1px !important;
+// }
+
+html, body{
+  overflow-x: hidden;
+}

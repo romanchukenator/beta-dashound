@@ -4,10 +4,10 @@
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
   </head>
   <body>
-    <h1>Thank God you signed up for Dashound, <%= @user.email %></h1>
+    <h1>Thank God you signed up for Dashound, <%= current_user.email %></h1>
     <p>
-      Your username is: <%= @user.email %><br />
-      Your password is: <%= @user.password %>
+      Your username is: <%= current_user.email %><br />
+      Your password is: <%= current_user.password %>
     </p>
     <p>
       Login to Dashound at: <%= @url %>.

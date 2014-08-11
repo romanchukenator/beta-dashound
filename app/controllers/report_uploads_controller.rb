@@ -1,18 +1,8 @@
 class ReportUploadsController < ApplicationController
 
-  def index
-  end
-
   def create
-    user = User.first
+    user = current_user
     ReportMailer.call(user, params[:report_uploads])
-    redirect_to :root
+    redirect_to current_user
   end
-
-  def send_reports
-    user = User.first
-    ReportMailer.call(user, params[:report_uploads])
-    redirect_to :root
-  end
-  
 end

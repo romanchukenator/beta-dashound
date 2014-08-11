@@ -1,0 +1,45 @@
+<section id="hero" style="background-image: none;">
+  <div class="hero-translucent">
+    <div id="hero-text">    
+      <h1>Submit your reports</h1>
+      <h3>We'll get back to you with your industry benchmarks</h3>
+      <div class="mc-field-group">
+        <div class="form-group text-center">
+          <%= form_for :report_uploads, url: report_uploads_path, :html => { :multipart => true} do |f| %>
+            <div class="input-group">
+              <%= f.text_field :company_name, class: "form-control", id: "mce-EMAIL", placeholder: "company name" %>
+            </div>
+
+              <div class="panel panel-default input-group">
+                <div class="panel-body">
+                  <p style="margin-bottom: 50px;">
+                  Profit and Loss       
+                    <%= f.file_field :file_pl, class: "form-control" %>
+                  </p>
+
+                  <p style="margin-bottom: 50px;">
+                  Balance Sheet
+                    <%= f.file_field :file_bs, class: "form-control" %>                    
+                  </p>
+
+                  <p style="margin-bottom: 40px;">
+                  Cash Flow
+                    <%= f.file_field :file_cf, class: "form-control" %>
+                  </p>
+                </div>
+              </div>
+      
+            <%= f.submit "Send report", class: "btn btn-large btn-primary" %>
+          <% end %>
+        </div>
+      </div>
+
+      <p>Signed in as <%= current_user.email %>
+        <span class="label label-warning">
+        <%= link_to "Sign out?", signout_path, method: "delete" %>
+        </span>
+      </p>
+
+    </div>
+  </div>
+</section>
