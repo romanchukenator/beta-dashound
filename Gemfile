@@ -40,3 +40,4 @@ gem 'bcrypt', '~> 3.1.7'
 
 gem 'pry'
 gem 'pry-debugger'
+gem 'rspec', '~> 3.0.0'
