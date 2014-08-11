@@ -1,6 +1,11 @@
 <section id="hero" style="background-image: none;">
   <div class="hero-translucent">
-    <div id="hero-text">    
+    <div id="hero-text">
+
+    <% flash.each do |key, value| %>
+      <%= content_tag(:div, value, class: "alert alert-#{key}") %>
+    <% end %>
+    
       <h1>Submit your reports</h1>
       <h3>We'll get back to you with your industry benchmarks</h3>
       <div class="mc-field-group">
